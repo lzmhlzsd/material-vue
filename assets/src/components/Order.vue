@@ -4,7 +4,7 @@
 		name: 'Order',
 		vuex: {
 			getters: {
-				orders: function(orderList) {
+				orders: function({orderList}) {
 					console.log(orderList.orders)
 					return orderList.orders
 				},

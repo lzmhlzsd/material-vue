@@ -4,7 +4,7 @@ module.exports = {
     //入口
     entry: {
         main: './src/entry/index',
-        vendors: ['vue']
+        vendors: ['vue','vue-router']
     },
     //输出
     output: {
@@ -43,8 +43,9 @@ module.exports = {
         extensions: ['', '.js', '.vue'],    
         // 别名
         alias: {
-            //components: path.join(__dirname, '/src/components'),
-            vue: 'vue/dist/vue.js'
+            'components': path.join(__dirname, '/src/components'),
+            'vue': 'vue/dist/vue.js',
+            'vue-router': 'vue-router/dist/vue-router.js'
         }
     },
     devServer: {

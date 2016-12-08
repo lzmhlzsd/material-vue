@@ -1,4 +1,28 @@
+<script>
+    import nav from './Nav'
+    import store from './../vuex/store'
+
+    export default {
+        name: 'App',
+        data() {
+            return {
+                msg: 'hello world'
+            }
+        },
+        components:{
+            'order-nav': nav
+        }
+    }
+</script>
 <template>
+    <div id="app">
+        <order-nav></order-nav>
+        {{ msg }}
+        <router-view></router-view>
+    </div>
+</template>
+
+<!-- <template>
     <div>
         <h1>姓名12：{{name}}</h1>
         <h2>{{age}}</h2>
@@ -34,4 +58,4 @@
             background-color: #999;
         }
     }
-</style>
+</style> -->

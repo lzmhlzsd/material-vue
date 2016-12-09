@@ -1,7 +1,17 @@
-export const showDetail = makeAction('SHOW_DETAIL')
+import * as types from './mutation-types'
 
-function makeAction(type) {
-    return ({
-        dispatch
-    }, ...args) => dispatch(type, ...args)
+const actions = {
+    showDetail({ commit }, id) {
+        commit(types.SHOW_DETAIL)
+    }
+}
+
+const mutations = {
+    [types.SHOW_DETAIL](state, { id }) {
+        state.activeOrder = id
+    }
+}
+export default {
+    actions,
+    mutations
 }

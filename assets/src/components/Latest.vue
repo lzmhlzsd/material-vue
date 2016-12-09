@@ -11,19 +11,22 @@
 		components:{
             'order-e': order
         },
-		vuex: {
-			//解构函数，{orderList}对象指的是store的orderList模块的state.orderList
-			getters: {
-				orders: ({orderList}) => orderList.orders
-			},
-			//注入action
-			actions: {
-				showDetail
-			},
-			computed: {
+		// vuex: {
+		// 	//解构函数，{orderList}对象指的是store的orderList模块的state.orderList
+		// 	getters: {
+		// 		orders: ({orderList}) => orderList.orders
+		// 	},
+		// 	//注入action
+		// 	actions: {
+		// 		showDetail
+		// 	},
+		// 	computed: {
 
-			}
-		}
+		// 	}
+		// },
+		// methods:{
+		// 	actions: showDetail
+		// }
 	}
 </script>
 <template>

@@ -1,24 +1,37 @@
 <script>
-	import { fold,showDetail } from './../vuex/actions'
+	import { mapGetters } from 'vuex'
+
 	export default {
 		name: 'Order',
-		vuex: {
-			getters: {
-				orders: function({orderList}) {
-					console.log(orderList.orders)
-					return orderList.orders
-				},
-				activeOrder: ({orderList}) => orderList.activeOrder
-			},
-			actions: {
-				showDetail
+		// vuex: {
+		// 	getters: {
+		// 		orders: function({orderList}) {
+		// 			console.log(orderList.orders)
+		// 			return orderList.orders
+		// 		},
+		// 		activeOrder: ({orderList}) => orderList.activeOrder
+		// 	},
+		// 	actions: {
+		// 		showDetail
+		// 	}
+		// },
+		computed:{
+			...mapGetters([
+				'orders',
+				'activeOrder'
+				])
+
+		},
+		methods: {
+			showDetail(id) {
+				console.log(id)
+				this.$store.dispatch('showDetail', id)
 			}
 		}
 	}
 </script>
 <template>
-	<div>order-list</div>
-	<!-- <ul class="list-unstyled row">
+	<ul class="list-unstyled row">
 		<li class="bill" v-for="order in orders" @click="showDetail(order.id)" track-by="id">
 			<div>
 				<h4>{{order.name}}</h4>
@@ -38,7 +51,7 @@
 		        </p> 
 			</div>
 		</li>
-	</ul> -->
+	</ul>
 </template>
 
 <style media="screen">

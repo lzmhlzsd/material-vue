@@ -16,6 +16,10 @@
 </script>
 <template>
     <div id="app">
+<mu-appbar title="Title">
+  <mu-icon-button icon='menu' slot="left"/>
+  <mu-icon-button icon='expand_more' slot="right"/>
+</mu-appbar>
         <order-nav></order-nav>
         {{ msg }}
         <router-view></router-view>

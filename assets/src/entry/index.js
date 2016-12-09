@@ -1,11 +1,15 @@
 //es6语法：
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import App from 'components/App';
+import App from 'components/App'
+import store from '../vuex/store'
+import MuseUI from 'muse-ui'
+import 'muse-ui/dist/muse-ui.css'
 
 
 Vue.config.debug = true; //开启错误提示
 Vue.use(VueRouter)
+Vue.use(MuseUI)
 
 
 
@@ -33,5 +37,6 @@ var router = new VueRouter({
 
 new Vue({
     router: router,
+    store,
     render: h => h(App)
 }).$mount('#root')

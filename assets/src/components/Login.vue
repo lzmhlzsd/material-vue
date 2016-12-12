@@ -23,7 +23,7 @@ export default {
     },
     methods: {
         login: function() {
-    		this.$http.get('/rest/login')
+    		this.$http.get('/rest/login',{params:{account: 'admin', password: '12312'}})
     				  .then((response) => { 
     				  	console.log(response) 
     				   })

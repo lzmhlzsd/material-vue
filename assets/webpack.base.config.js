@@ -60,3 +60,18 @@ module.exports = {
     // 开启source-map，webpack有多种source-map，在官网文档可以查到
     devtool: 'eval-source-map'
 }
+console.log(process.env.NODE_ENV)
+//if (process.env.NODE_ENV === 'local') {
+    console.log(process.env.NODE_ENV)
+    module.exports.devServer = {
+        hot: true,
+        inline: true,
+        proxy: {
+            '/rest/*': {
+                target: 'http://localhost:9999',
+                secure: false,
+                pathRewrite: {'^/rest' : ''}
+            }
+        }
+    }
+//}

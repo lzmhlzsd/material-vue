@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --inline --compress --hot --history-api-fallback --config webpack.base.config.js"
+    "dev": "webpack-dev-server --inline --compress --hot --history-api-fallback --config webpack.base.config.js",
+    "build": "webpack --progress --hide-modules --config webpack.prod.config.js"
   },
   "author": "",
   "license": "ISC",

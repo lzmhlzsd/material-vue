@@ -8,12 +8,14 @@
         <br/>
         <mu-raised-button label="登录" fullWidth class="demo-raised-button" primary @click="login" />
         <br/>
+<!--         <ul class="nav navbar-nav">
+			<router-link tag="li" to="/latest">近7天待还 <span class="sr-only">(current)</span></router-link>
+			<router-link tag="li" to="/all">全部待还</router-link>
+		</ul> -->
     </div>
 </template>
 <script>
 
-var a = 2;
-var abcsfefe=23;
 export default {
     data() {
         return {
@@ -23,13 +25,22 @@ export default {
     },
     methods: {
         login: function() {
-    		this.$http.get('/rest/login',{params:{account: 'admin', password: '12312'}})
-    				  .then((response) => { 
-    				  	console.log(response) 
-    				   })
-    				  .catch((response) => { 
-    				  	console.log(response) 
-    				  })
+            this.$http.get('/rest/loginsuccess', {
+                    params: {
+                        account: this.account,
+                        password: this.password
+                    }
+                })
+                .then((res) => {
+                    if (res.body.code == '1003') {
+                        this.$router.push({path:"/index"});
+                    } else {
+
+                    }
+                })
+                .catch((res) => {
+                    console.log(res)
+                })
 
         }
     }

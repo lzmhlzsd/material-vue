@@ -15,19 +15,22 @@ export default {
 }
 </script>
 <template>
-    <div id="app">
-        <mu-appbar title="Title">
-            <mu-icon-button icon='menu' slot="left" />
-            <mu-icon-button icon='expand_more' slot="right" />
-        </mu-appbar>
-        <order-nav></order-nav>
-        {{ msg }}
-        <router-view></router-view>
+    <div>
+        <div class="header"></div>
+        <div id="app">
+            <router-view></router-view>
+        </div>
+        <div class="footer"></div>
     </div>
 </template>
 <style lang="stylus">
-    body .mu-appbar-title
-        color #ff0000
+html,body
+    height 100%
+    width 100%
+body
+    margin 0
+div 
+    box-sizing border-box
 </style>
 <!-- <template>
     <div>

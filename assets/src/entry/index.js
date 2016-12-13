@@ -1,8 +1,8 @@
 //es6语法：
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-//import App from 'components/App'
-import App from 'components/Login'
+import App from 'components/App'
+//import App from 'components/Login'
 import store from '../vuex/store'
 import MuseUI from 'muse-ui'
 import VueResource from 'vue-resource'
@@ -21,14 +21,16 @@ const Foo = { template: '<div>foo</div>' }
 const Bar = { template: '<div>bar</div>' }
 
 const routes = [{
-        path: '/login',
-        component: require('./../components/Login.vue'),
-        beforeEnter: (to, from, next) => {  
-            console.log(31)
-        }
+        path: '/',
+        component: require('./../components/Login.vue')
+        // beforeEnter: (to, from, next) => {  
+        //     console.log(31)
+        //     next()
+        // }
     },
-    //{ path: '/latest', component: require('./../components/Latest.vue')},
-    //{ path: '/all', component: require('./../components/All.vue') }
+    { path: '/index', component: require('./../components/Index.vue')},
+    { path: '/latest', component: require('./../components/Latest.vue')},
+    { path: '/all', component: require('./../components/All.vue') }
 ]
 
 

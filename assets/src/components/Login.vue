@@ -8,46 +8,50 @@
         <br/>
         <mu-raised-button label="登录" fullWidth class="demo-raised-button" primary @click="login" />
         <br/>
-<!--         <ul class="nav navbar-nav">
-			<router-link tag="li" to="/latest">近7天待还 <span class="sr-only">(current)</span></router-link>
-			<router-link tag="li" to="/all">全部待还</router-link>
-		</ul> -->
+        <!--         <ul class="nav navbar-nav">
+            <router-link tag="li" to="/latest">近7天待还 <span class="sr-only">(current)</span></router-link>
+            <router-link tag="li" to="/all">全部待还</router-link>
+        </ul> -->
     </div>
 </template>
 <script>
-
 export default {
     data() {
-        return {
-            account: '',
-            password: ''
-        }
-    },
-    methods: {
-        login: function() {
-            this.$http.get('/rest/loginsuccess', {
-                    params: {
-                        account: this.account,
-                        password: this.password
-                    }
-                })
-                .then((res) => {
-                    if (res.body.code == '1003') {
-                        this.$router.push({path:"/index"});
-                    } else {
+            return {
+                account: '',
+                password: ''
+            }
+        },
+        methods: {
+            login: function() {
+                this.$router.push({
+                                path: "/index"
+                            });
+                // this.$http.get('/api/loginsuccess', {
+                //         params: {
+                //             account: this.account,
+                //             password: this.password
+                //         }
+                //     })
+                //     .then((res) => {
+                //         if (res.body.code == '1003') {
+                //             this.$router.push({
+                //                 path: "/index"
+                //             });
+                //         } else {
 
-                    }
-                })
-                .catch((res) => {
-                    console.log(res)
-                })
+                //         }
+                //     })
+                //     .catch((res) => {
+                //         console.log(res)
+                //     })
 
+            }
         }
-    }
 }
 </script>
 <style lang="stylus">
 body .login-form 
-	width 25rem 
-	margin 18% auto
+    width 25rem 
+    margin 18% auto
 </style>

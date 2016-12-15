@@ -13,7 +13,7 @@ import 'muse-ui/dist/muse-ui.css'
 Vue.config.debug = true; //开启错误提示
 Vue.use(VueRouter)
 Vue.use(MuseUI)
-Vue.use(VueResource);
+Vue.use(VueResource)
 
 
 

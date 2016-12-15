@@ -67,10 +67,10 @@ console.log(process.env.NODE_ENV)
         hot: true,
         inline: true,
         proxy: {
-            '/rest/*': {
+            '/api/*': {
                 target: 'http://localhost:9999',
                 secure: false,
-                pathRewrite: {'^/rest' : ''}
+                pathRewrite: {'^/api' : ''}
             }
         }
     }

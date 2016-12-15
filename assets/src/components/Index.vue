@@ -70,6 +70,8 @@
 		top 0
 		bottom 0
 		border 1px solid red
+	.tee-sider .mu-list > div 
+		width 100%
 	.tee-content
 		height 100%
 		padding-left 30rem

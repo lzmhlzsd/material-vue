@@ -20,7 +20,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../assets')));
 
-app.use('/', routes);
+//app.use('/', routes);
+
+routes(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

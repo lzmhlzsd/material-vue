@@ -1,14 +1,22 @@
-// module.exports = function(app) {
-//     app.get('/', function(req, res) {
-//     	res.render('index');
-//     })
-// }
+var user_routes = require('./../app/routes/user')
 
-var express = require('express');
-var router = express.Router();
 
-router.get('/', function(req,res){
-	res.render('index');
-});
 
-module.exports = router;
+
+
+module.exports = function(app){
+	user_routes(app)
+}
+
+// var express = require('express');
+// var router = express.Router();
+
+
+
+// router.get('/', function(req,res){
+// 	res.render('index');
+// });
+
+// router.get('')
+
+// module.exports = router;

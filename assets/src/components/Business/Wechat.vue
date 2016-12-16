@@ -4,12 +4,12 @@
             <tee-menu></tee-menu>
         </div>
         <div class="tee-content">
-        	home
+        	Wechat
         </div>
     </div>
 </template>
 <script>
- 	import Menu from './Menu' 
+ 	import Menu from './../Menu' 
 	export default {
 		components:{
 			'tee-menu': Menu
@@ -28,6 +28,8 @@
 		top 0
 		bottom 0
 		border 1px solid red
+	.tee-sider .mu-list > div 
+		width 100%
 	.tee-content
 		height 100%
 		padding-left 30rem

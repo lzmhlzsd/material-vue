@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     //入口
     entry: {
@@ -20,6 +21,11 @@ module.exports = {
             { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
             { test: /\.css$/, loader: 'style!css!autoprefixer' },
             { test: /\.scss$/, loader: 'style!css!sass?sourceMap' },
+            {
+                test: /\.styl$/,
+                // loader: "style!css!stylus"
+                loader: ExtractTextPlugin.extract(['css-loader', 'postcss-loader', 'stylus-loader'])
+            },
             { test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=8192' },
             { test: /\.(html|tpl)$/, loader: 'html-loader' }
         ]
@@ -58,20 +64,23 @@ module.exports = {
         grogress: true
     },
     // 开启source-map，webpack有多种source-map，在官网文档可以查到
-    devtool: 'eval-source-map'
+    devtool: 'eval-source-map',
+    plugins: [
+        new ExtractTextPlugin("app.css")
+    ]
 }
 console.log(process.env.NODE_ENV)
-//if (process.env.NODE_ENV === 'local') {
-    console.log(process.env.NODE_ENV)
-    module.exports.devServer = {
+    //if (process.env.NODE_ENV === 'local') {
+console.log(process.env.NODE_ENV)
+module.exports.devServer = {
         hot: true,
         inline: true,
         proxy: {
             '/api/*': {
                 target: 'http://localhost:9999',
                 secure: false,
-                pathRewrite: {'^/api' : ''}
+                pathRewrite: { '^/api': '' }
             }
         }
     }
-//}
+    //}

@@ -29,6 +29,12 @@ const routes = [{
         // }
     },
     { path: '/index', component: require('./../components/Index.vue')},
+    { path: '/cashier', component: require('./../components/Business/Cashier.vue')},
+    { path: '/dynamic', component: require('./../components/Business/Dynamic.vue')},
+    { path: '/hongbao', component: require('./../components/Business/Hongbao.vue')},
+    { path: '/site', component: require('./../components/Business/Site.vue')},
+    { path: '/store', component: require('./../components/Business/Store.vue')},
+    { path: '/wechat', component: require('./../components/Business/Wechat.vue')},
     { path: '/latest', component: require('./../components/Latest.vue')},
     { path: '/all', component: require('./../components/All.vue') }
 ]

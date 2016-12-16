@@ -4,20 +4,17 @@
             <tee-menu></tee-menu>
         </div>
         <div class="tee-content">
-        	home
+        	
         </div>
     </div>
 </template>
 <script>
  	import Menu from './Menu' 
+ 	import Index from './Index'
 	export default {
 		components:{
-			'tee-menu': Menu
-		},
-		methods: {
-			go: function(url){
-				this.$router.push({ path: url });
-			}
+			'tee-menu': Menu,
+			'tee-Index': Index
 		}
 	}
 </script>

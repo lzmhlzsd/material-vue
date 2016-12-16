@@ -1,9 +1,9 @@
-var code = require('./../plugin/code');
+var code = require('./../../../config/errors');
 module.exports = function() {
     var data = {
         loginsuccess: {
             code: 1003,
-            msg: code['1003'],
+            msg: code['1003'],   //登录成功
             data: [
 	            { 
 	            	id: 1, menu: '我的生意', url: '', sub_menu: [
@@ -29,6 +29,5 @@ module.exports = function() {
             msg: code['1004']
         }
     }
-    console.log(data)
     return data;
 }

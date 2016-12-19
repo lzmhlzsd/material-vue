@@ -1,13 +1,15 @@
 <template>
 	<div class="main-menu">
-		<mu-list>
+		<mu-list :value="select" @change="handleChange">
+			<mu-list-item value="/index" title='主页'></mu-list-item>
             <mu-list-item v-bind="{ title: menu.name }" :class="'main-menu-list'" v-for="menu in menus" toggleNested>
-            	<mu-list-item :value="submenu.url" slot="nested" v-bind="{ title: submenu.name}" v-for="submenu in menu.sub_menu" @click="go(submenu.url)"></mu-list-item>
+            	<mu-list-item :value="submenu.url" slot="nested" v-bind="{ title: submenu.name}" v-for="submenu in menu.sub_menu"></mu-list-item>
             </mu-list-item>
         </mu-list>
 	</div>
 </template>
 <script>
+	import { mapGetters } from 'vuex'
 	export default {
 		data() {
 			return {
@@ -32,9 +34,22 @@
 	            ]
 			}
 		},
+		created() {
+			this.$store.dispatch('selectMenu', this.$route.path)
+		},
+		computed: {
+			...mapGetters([
+				'select'
+				])
+		},
+		beforeRouteEnter (to, from, next) {
+			console.log(123)
+			console.log(to)
+		},
 		methods: {
-			go: function(url){
-				this.$router.push({ path: url });
+			handleChange: function(val){
+				//this.$store.dispatch('selectMenu', val)
+				this.$router.push({ path: val });
 			}
 		}
 	}
@@ -42,6 +57,6 @@
 <style lang="stylus">
 	.main-menu .mu-list > div 
 		width 100%
-	.main-menu-list .mu-list
+	.main-menu .mu-list
 		padding 0
 </style>

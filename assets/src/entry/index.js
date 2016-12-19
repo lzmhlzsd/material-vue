@@ -47,6 +47,8 @@ var router = new VueRouter({
     routes: routes
 })
 
+
+
 new Vue({
     router: router,
     store,

@@ -17,6 +17,9 @@ export default new Vuex.Store({
     },
     getters: {
     	//orders: ({orderList}) => orderList.order,
+        select: state => {
+            return state.loginModule.select
+        },
     	orders: state => {
     		return state.orderList.orders
     	},

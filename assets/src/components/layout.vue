@@ -4,17 +4,15 @@
             <tee-menu></tee-menu>
         </div>
         <div class="tee-content">
-        	
+        	<slot name="content"></slot>
         </div>
     </div>
 </template>
 <script>
  	import Menu from './Menu' 
- 	import Index from './Index'
 	export default {
 		components:{
-			'tee-menu': Menu,
-			'tee-Index': Index
+			'tee-menu': Menu
 		}
 	}
 </script>

@@ -3,7 +3,7 @@
         <tee-layout>
             <div slot="content">
                 Cashier
-                <mu-table :fixedFooter="fixedFooter" :fixedHeader="fixedHeader" :height="height" :enableSelectAll="enableSelectAll" :multiSelectable="multiSelectable" :selectable="selectable" :showCheckbox="showCheckbox">
+                <mu-table :fixedFooter="fixedFooter" :fixedHeader="fixedHeader" :enableSelectAll="enableSelectAll" :multiSelectable="multiSelectable" :selectable="selectable" :showCheckbox="showCheckbox">
                     <mu-thead slot="header">
                         <mu-tr>
                             <mu-th tooltip="ID">ID</mu-th>

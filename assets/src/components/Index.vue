@@ -1,30 +1,28 @@
 <template>
-    <div>
-        <tee-layout>
-            <div slot="content">
-                index
-                <div class="demo-grid">
-                    <mu-row gutter>
-                        <mu-col desktop="100">col-100
-                            <br/>tablet-50
-                            <br/>desktop-100
-                        </mu-col>
-                    </mu-row>
-                    <mu-row gutter>
-                        <mu-col width="50" tablet="30" desktop="33">col-50
-                            <br/>tablet-30
-                            <br/>desktop-25</mu-col>
-                        <mu-col width="50" tablet="30" desktop="33">col-50
-                            <br/>tablet-30
-                            <br/>desktop-25</mu-col>
-                        <mu-col width="50" tablet="20" desktop="33">col-50
-                            <br/>tablet-20
-                            <br/>desktop-25</mu-col>
-                    </mu-row>
-                </div>
+    <tee-layout>
+        <div slot="content">
+            index
+            <div class="demo-grid">
+                <mu-row gutter>
+                    <mu-col desktop="100">col-100
+                        <br/>tablet-50
+                        <br/>desktop-100
+                    </mu-col>
+                </mu-row>
+                <mu-row gutter>
+                    <mu-col width="50" tablet="30" desktop="33">col-50
+                        <br/>tablet-30
+                        <br/>desktop-25</mu-col>
+                    <mu-col width="50" tablet="30" desktop="33">col-50
+                        <br/>tablet-30
+                        <br/>desktop-25</mu-col>
+                    <mu-col width="50" tablet="20" desktop="33">col-50
+                        <br/>tablet-20
+                        <br/>desktop-25</mu-col>
+                </mu-row>
             </div>
-        </tee-layout>
-    </div>
+        </div>
+    </tee-layout>
 </template>
 <script>
 import Menu from './Menu'

@@ -2,7 +2,7 @@
 	<div class="main-menu">
 		<mu-list :value="select" @change="handleChange">
 			<mu-list-item value="/index" title='主页'></mu-list-item>
-            <mu-list-item v-bind="{ title: menu.name }" :class="'main-menu-list'" v-for="menu in menus" toggleNested>
+            <mu-list-item v-bind="{ title: menu.name }" :class="'main-menu-list, menu-first'" v-for="menu in menus">
             	<mu-list-item :value="submenu.url" slot="nested" v-bind="{ title: submenu.name}" v-for="submenu in menu.sub_menu"></mu-list-item>
             </mu-list-item>
         </mu-list>
@@ -29,6 +29,35 @@
 		                	{ id: 9, name: '账户明细', url: '/journal', sub_menu: [] },
 		                	{ id: 10, name: '我要提现', url: '/withdraw', sub_menu: [] },
 		                	{ id: 11, name: '退款纪录', url: '/refund', sub_menu: [] }
+		                ]
+		            },
+		            { 
+		            	id: 12, name: '我的交易', url: '', sub_menu: [
+		                	{ id: 13, name: '订单明细', url: '/journal', sub_menu: [] },
+		                	{ id: 14, name: '商品管理', url: '/withdraw', sub_menu: [] },
+		                	{ id: 15, name: '客户信息', url: '/refund', sub_menu: [] }
+		                ]
+		            },
+		            { 
+		            	id: 16, name: '分账宝', url: '', sub_menu: [
+		                	{ id: 17, name: '策略管理', url: '/journal', sub_menu: [] },
+		                	{ id: 18, name: '子账户管理', url: '/withdraw', sub_menu: [] }
+		                ]
+		            },
+		            { 
+		            	id: 19, name: '管理配置', url: '', sub_menu: [
+		                	{ id: 20, name: '商户信息', url: '/journal', sub_menu: [] },
+		                	{ id: 21, name: '绑定银行卡', url: '/withdraw', sub_menu: [] },
+		                	{ id: 22, name: '操作日志', url: '/withdraw', sub_menu: [] },
+		                	{ id: 23, name: '操作员', url: '/withdraw', sub_menu: [] }
+		                ]
+		            },
+		            { 
+		            	id: 19, name: '开发对接', url: '', sub_menu: [
+		                	{ id: 20, name: '接口文档', url: '/journal', sub_menu: [] },
+		                	{ id: 21, name: '密钥管理', url: '/withdraw', sub_menu: [] },
+		                	{ id: 22, name: 'webhook', url: '/withdraw', sub_menu: [] },
+		                	{ id: 23, name: '代码样例', url: '/withdraw', sub_menu: [] }
 		                ]
 		            }
 	            ]
@@ -59,4 +88,6 @@
 		width 100%
 	.main-menu .mu-list
 		padding 0
+	.menu-first 
+		color #ff0000
 </style>

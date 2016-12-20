@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="height:100%">
         <div class="tee-sider">
             <tee-menu></tee-menu>
         </div>
@@ -18,12 +18,14 @@
 </script>
 <style lang="stylus">
 	.tee-sider
-		width 30rem 
-		position fixed
-		top 0
+		width 25rem 
+		top 10%
 		bottom 0
-		border 1px solid red
+		background-color #fff
+		border 1px solid #edf0f2
+		float left
 	.tee-content
 		height 100%
-		padding-left 30rem
+		background-color #fff
+		padding-left 25rem
 </style>

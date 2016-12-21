@@ -15,6 +15,7 @@
     </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
     data() {
             return {
@@ -22,29 +23,36 @@ export default {
                 password: ''
             }
         },
+        computed: {
+            ...mapGetters([
+                'select'
+                ])
+        },
         methods: {
             login: function() {
-                this.$router.push({
-                                path: "/index"
-                            });
-                // this.$http.get('/api/loginsuccess', {
-                //         params: {
-                //             account: this.account,
-                //             password: this.password
-                //         }
-                //     })
-                //     .then((res) => {
-                //         if (res.body.code == '1003') {
-                //             this.$router.push({
+                // this.$router.push({
                 //                 path: "/index"
                 //             });
-                //         } else {
+                this.$http.get('/api/loginsuccess', {
+                        params: {
+                            account: this.account,
+                            password: this.password
+                        }
+                    })
+                    .then((res) => {
+                        if (res.body.code == '1003') {
+                            //缓存数据
+                            this.$store.dispatch('setMenu', res.body.data)
+                            this.$router.push({
+                                path: "/index"
+                            });
+                        } else {
 
-                //         }
-                //     })
-                //     .catch((res) => {
-                //         console.log(res)
-                //     })
+                        }
+                    })
+                    .catch((res) => {
+                        console.log(res)
+                    })
 
             }
         }

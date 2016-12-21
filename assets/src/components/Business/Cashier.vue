@@ -36,30 +36,7 @@ import Layout from './../Layout'
 export default {
     data() {
         return {
-            tableData: [{
-                name: 'John Smith',
-                status: 'Employed',
-                selected: true
-            }, {
-                name: 'Randal White',
-                status: 'Unemployed'
-            }, {
-                name: 'Stephanie Sanders',
-                status: 'Employed',
-                selected: true
-            }, {
-                name: 'Steve Brown',
-                status: 'Employed'
-            }, {
-                name: 'Joyce Whitten',
-                status: 'Employed'
-            }, {
-                name: 'Samuel Roberts',
-                status: 'Employed'
-            }, {
-                name: 'Adam Moore',
-                status: 'Employed'
-            }],
+            tableData: [],
             fixedHeader: true,
             fixedFooter: true,
             selectable: true,
@@ -67,6 +44,19 @@ export default {
             enableSelectAll: false,
             showCheckbox: true
         }
+    },
+    created() {
+    	 this.$http.get('/api/cashier')
+        .then((res) => {
+            if (res.body.code == '1004') {
+                this.tableData = res.body.data;
+            } else {
+
+            }
+        })
+        .catch((res) => {
+            console.log(res)
+        })
     },
     components: {
         'tee-menu': Menu,

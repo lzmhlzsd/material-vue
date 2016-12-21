@@ -17,6 +17,11 @@ export default new Vuex.Store({
     },
     getters: {
     	//orders: ({orderList}) => orderList.order,
+        getmenu: state => {
+            // console.log('1234')
+            // console.log(state)
+            return state.loginModule.menu
+        },
         select: state => {
             return state.loginModule.select
         },

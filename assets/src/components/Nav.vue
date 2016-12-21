@@ -1,15 +1,5 @@
-<script>
-	export default {
-		name: 'Nav',
-		vuex: {
-			getters: {
-				current: ({orderList}) => orderList.activeOrder
-			}
-		}
-	}
-</script>
 <template>
-	<nav class="navbar navbar-default">
+	<!-- <nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<router-link class="navbar-brand" to="/">Vue-订单demo</router-link>
@@ -21,5 +11,13 @@
 				</ul>
 			</div>
 		</div>
-	</nav>
+	</nav> -->
+	<div>
+		<span>name</span>
+	</div>
 </template>
+<script>
+	export default {
+		name: 'Nav'
+	}
+</script>

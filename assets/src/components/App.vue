@@ -1,13 +1,21 @@
 <script>
 import nav from './Nav'
 import store from './../vuex/store'
-
+import { mapGetters } from 'vuex'
 export default {
     name: 'App',
     data() {
         return {
             msg: 'hello world'
         }
+    },
+    created () {
+        this.$store.dispatch('getBaseInfo')
+    },
+    computed: {
+        ...mapGetters([
+            'login'
+            ])
     },
     components: {
         'order-nav': nav
@@ -16,7 +24,7 @@ export default {
 </script>
 <template>
     <div style="height: 100%">
-        <div class="header">
+        <div class="header" v-if="!login">
             <mu-row>
                 <mu-col width="50" tablet="30" desktop="50" style="padding: 1rem;">
                     <img src="./../img/logo.png" style="float: left;margin-right: 1rem;"/>
@@ -54,7 +62,7 @@ div
     box-sizing border-box
 .container-body > div
     width 100%
-    display flex
+
 .title-main
     font-size 2rem
     color #797979

@@ -12,12 +12,28 @@
 			</div>
 		</div>
 	</nav> -->
-	<div>
-		<span>name</span>
+	<div class="tee-navbar">
+		<span>{{ select }}</span>
 	</div>
 </template>
 <script>
 	export default {
-		name: 'Nav'
+		name: 'Nav',
+		data() {
+			return {
+				select: ''
+			}
+		},
+		created() {
+			this.$store.dispatch('selectMenu', this.$route.path)
+		},
+		mounted () {
+		    this.select = this.$store.getters.select.name
+		},
 	}
 </script>
+<style lang="stylus">
+	.tee-navbar
+		font-size 2rem
+		padding 0.5rem 1rem
+</style>

@@ -5,7 +5,7 @@ module.exports = {
     //入口
     entry: {
         main: './src/entry/index',
-        vendors: ['vue', 'vue-router']
+        vendors: ['vue', 'vue-router', 'underscore']
     },
     //输出
     output: {

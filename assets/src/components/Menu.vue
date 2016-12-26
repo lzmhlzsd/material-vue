@@ -36,7 +36,7 @@
 		methods: {
 			handleChange: function(val){
 				//this.$store.dispatch('selectMenu', val)
-				this.$router.push({ path: val });
+				this.$router.push({ path: val })
 			}
 		}
 	}

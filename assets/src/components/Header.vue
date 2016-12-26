@@ -23,7 +23,7 @@
                 </mu-popover>
             </mu-col>
         </mu-row>
-        <mu-dialog :open="dialog" title="提示" @close="close">
+        <mu-dialog :open="dialog" title="提示" @close="close" dialogClass="logout-dialog">
             确认退出系统？
             <mu-flat-button slot="actions" @click="close" primary label="取消" />
             <mu-flat-button slot="actions" primary @click="ok" label="确定" />
@@ -81,3 +81,8 @@ export default {
     }
 }
 </script>
+<style lang="stylus">
+	.logout-dialog{
+		width 500px
+	}
+</style>

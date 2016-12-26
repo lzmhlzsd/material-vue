@@ -2,43 +2,25 @@
 import nav from './Nav'
 import store from './../vuex/store'
 import { mapGetters } from 'vuex'
+import header from './Header'
 export default {
     name: 'App',
-    data() {
-        return {
-            msg: 'hello world'
-        }
-    },
     created () {
         this.$store.dispatch('getBaseInfo')
     },
-    computed: {
-        ...mapGetters([
-            'login'
-            ])
-    },
+    // computed: {
+    //     ...mapGetters([
+    //         'login'
+    //         ])
+    // },
     components: {
-        'order-nav': nav
+        'tee-header': header
     }
 }
 </script>
 <template>
     <div style="height: 100%">
-        <div class="header" v-if="!login">
-            <mu-row>
-                <mu-col width="50" tablet="30" desktop="50" style="padding: 1rem;">
-                    <img src="./../img/logo.png" style="float: left;margin-right: 1rem;"/>
-                    <div style="line-height: 20px;float: left;">
-                        <span class="title-sub">天工收银</span>
-                        <br/>
-                        <span class="title-main">上海商派网络科技有限公司</span>
-                    </div>
-                </mu-col>
-                <mu-col width="50" tablet="20" desktop="50">
-                    <img src="./../img/avatar.png" style="height: 50px;" />
-                </mu-col>
-            </mu-row>
-        </div>
+        <tee-header></tee-header>
         <div class="container-body">
             <router-view></router-view>
         </div>
@@ -69,4 +51,14 @@ div
 .title-sub 
     font-size 1.3rem
     color #797979
+.header #avatar
+    height 5rem
+    float right
+    border-radius 2.5rem
+    border 1px solid #efe9e9
+    margin-right 0.5rem
+    margin-top 0.4rem
+    cursor pointer
+.mu-menu-item-title
+    font-size 1.4rem !important
 </style>

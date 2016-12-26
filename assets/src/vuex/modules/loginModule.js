@@ -1,4 +1,7 @@
-import { SET_LOGIN_FLAG, SELECT_MENU, SET_MENU, SET_BASE_INFO, GET_BASE_INFO } from '../mutation-types'
+import { 
+    SET_LOGIN_FLAG, SELECT_MENU, SET_MENU, SET_BASE_INFO, GET_BASE_INFO,
+    DEL_BASE_INFO
+} from '../mutation-types'
 import _ from 'underscore'
 
 let localStorage = window.localStorage
@@ -15,6 +18,7 @@ const actions = {
     selectMenu: ({ commit }, url) => commit(SELECT_MENU, url),
     //setMenu: ({ commit }, menu) => commit(SET_MENU, menu),
     setBaseInfo: ({ commit }, data) => commit(SET_BASE_INFO, data),
+    delBaseInfo: ({ commit }) => commit(DEL_BASE_INFO),
     getBaseInfo: ({ commit }) => commit(GET_BASE_INFO)
 }
 
@@ -36,6 +40,10 @@ const mutations = {
     	state.login = false
         localStorage.setItem('BaseInfo', JSON.stringify(data))
         state.menu = data
+    },
+    [DEL_BASE_INFO](state) {
+        state.login = true
+        localStorage.removeItem('BaseInfo')
     },
     [GET_BASE_INFO](state, data) {
         if (localStorage.getItem('BaseInfo')) {

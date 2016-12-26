@@ -36,7 +36,7 @@ export default {
                         this.$store.dispatch('setBaseInfo', res.body.data)
                         this.$router.push({
                             path: "/index"
-                        });
+                        })
                     } else {
                         
                     }

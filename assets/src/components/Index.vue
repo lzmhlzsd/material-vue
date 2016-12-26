@@ -55,7 +55,9 @@ import Layout from './Layout'
 export default {
     data() {
             return {
-                firstname: 'lkj'
+                firstname: 'lkj',
+                value: 1,
+                openImmediately: true
             }
         },
         created() {
@@ -69,7 +71,10 @@ export default {
         methods: {
             fetchData() {
                 alert(12)
-            }
+            },
+            handleChange (value) {
+          this.value = value
+        }
         },
         components: {
             'tee-menu': Menu,

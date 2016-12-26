@@ -29,7 +29,7 @@
 		},
 		mounted () {
 		    this.select = this.$store.getters.select.name
-		},
+		}
 	}
 </script>
 <style lang="stylus">

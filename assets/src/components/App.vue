@@ -61,4 +61,6 @@ div
     cursor pointer
 .mu-menu-item-title
     font-size 1.4rem !important
+input 
+    font-family "PingFang SC","Hiragino Sans GB","Source Han Sans","Noto Sans CJK Sc","Microsoft YaHei",sans-serif !important
 </style>

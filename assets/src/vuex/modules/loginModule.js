@@ -24,6 +24,12 @@ const actions = {
 
 const mutations = {
     [SELECT_MENU](state, url) {
+        if(url == '/index'){
+            state.select.name = '主页'
+            state.select.url = url
+            return
+        }
+
     	_.each(state.menu, function(value, key){
     		_.each(value.sub_menu, function(value, key){
     			if(value.url == url){

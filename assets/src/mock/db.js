@@ -58,37 +58,58 @@ module.exports = function() {
             msg: code['1004']
         },
         menus: {
-            code: 0000,
-            msg: code['0000'],
+            code: 1000,
+            msg: code['1000'],
             data: []
         },
         cashier: {
-        	code: 0000,
-            msg: code['0000'],
+        	code: 1000,
+            msg: code['1000'],
             data: [
 	        	{
 	                name: 'John Smith',
-	                status: 'Employed',
+	                phone: '13988881234',
+	                last_amount: 1000,
+	                week_count: 200,
+	                week_amount: 380,
 	                selected: true
 	            }, {
 	                name: 'Randal White',
-	                status: 'Unemployed'
+	                phone: '13988881234',
+	                last_amount: 1000,
+	                week_count: 200,
+	                week_amount: 380,
 	            }, {
 	                name: 'Stephanie Sanders',
-	                status: 'Employed',
+	                phone: '13988881234',
+	                last_amount: 1000,
+	                week_count: 200,
+	                week_amount: 380,
 	                selected: true
 	            }, {
 	                name: 'Steve Brown',
-	                status: 'Employed'
+	                phone: '13988881234',
+	                last_amount: 1000,
+	                week_count: 200,
+	                week_amount: 380,
 	            }, {
 	                name: 'Joyce Whitten',
-	                status: 'Employed'
+	                phone: '13988881234',
+	                last_amount: 1000,
+	                week_count: 200,
+	                week_amount: 380,
 	            }, {
 	                name: 'Samuel Roberts',
-	                status: 'Employed'
+	                phone: '13988881234',
+	                last_amount: 1000,
+	                week_count: 200,
+	                week_amount: 380,
 	            }, {
 	                name: 'Adam Moore',
-	                status: 'Employed'
+	                phone: '13988881234',
+	                last_amount: 1000,
+	                week_count: 200,
+	                week_amount: 380,
 	            }
 	        ]
     	}
